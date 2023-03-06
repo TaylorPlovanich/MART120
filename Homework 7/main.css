@@ -1,9 +1,12 @@
 .myclass {
   font-size: 50px;
-  color: burlywood;
 font-weight: bold;
 }
 
 #paragraph{
   text-align: center;
+}
+body{
+  background-image: url(tan.webp);
+  background-size: contain ;
 }
