@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Random Number Game</title>
+</head>
+<body>
+  <h1>Random Number Game</h1>
+  <script>
+    var correctAnswers = 0; // keep track of number of correct answers
+    var incorrectAnswers = 0; // keep track of number of incorrect answers
+    var numQuestions = 10; // number of questions to ask
+    for (var i = 0; i < numQuestions; i++) {
+      // generate two random numbers between 1 and 10
+      var num1 = Math.floor(Math.random() * 10) + 1;
+      var num2 = Math.floor(Math.random() * 10) + 1;
+      // ask the user to solve the equation
+      var answer = prompt("Question " + (i+1) + ": What is " + num1 + " + " + num2 + "?");
+
+      // check if the user's answer is correct
+      if (answer == num1 + num2) {
+        alert("Correct!");
+        correctAnswers++;
+      } else {
+        alert("Incorrect. The answer is " + (num1 + num2) + ".");
+        incorrectAnswers++;
+      }
+    }
+
+    // calculate percentage of correct answers
+    var percentage = (correctAnswers / numQuestions) * 100;
+    percentage = Math.round(percentage * 10) / 10; // round to 1 decimal place
+
+    // show final score with percentage
+    alert("You got " + correctAnswers + " out of " + numQuestions + " correct! (" + percentage + "%) You answered " + incorrectAnswers + " questions incorrectly.");
+  </script>
+  <p><a href="Homepage.html">Go to the Home Page</a></p>
+  <p><a href="Second Page.html">Go to the Short Story</a></p>
+  <p><a href="ThirdPage.html">Go to the Math Game</a></p>
+</body>
+</html>
