@@ -1,0 +1,62 @@
+<html>
+
+    <head>
+        <title>
+            First p5.js page
+        </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+        <script>
+            function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+
+     // Text
+     textSize(24);
+        textAlign(CENTER, TOP);
+        fill(0); // black color
+        text("Self Portrait: Taylor Plovanich", 200, 10);
+  
+  // Face
+  strokeWeight(2);
+  fill(255,255,255); // skin color
+  ellipse(200, 200, 200, 240);
+
+   // Neck
+   strokeWeight(2);
+        fill(255, 204, 153); // skin color
+        rect(170, 250, 60, 50, 10);
+  
+   // Eyes
+   strokeWeight(1);
+fill(0, 128, 0); // green
+point(165, 180);
+point(235, 180);
+ellipse(165, 180, 40, 25);
+        ellipse(235, 180, 40, 25);
+  
+  // Pupils
+  fill(0); // black
+  ellipse(165, 180, 10, 10);
+  ellipse(235, 180, 10, 10);
+  
+  // Nose
+  strokeWeight(2);
+  line(200, 190, 200, 220);
+  fill(255, 204, 153); // skin color
+  triangle(200, 220, 190, 240, 210, 240);
+  
+  // Mouth
+  strokeWeight(1);
+        strokeWeight(2);
+        line(170, 260, 190, 265);
+}
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
