@@ -1,0 +1,144 @@
+<html>
+<head>
+  <title>First p5.js page</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+  <script>
+   let x1 = 50; // initial x position of circle 1
+    let y1 = 50; // initial y position of circle 1
+    let x2 = 350; // initial x position of circle 2
+    let y2 = 350; // initial y position of circle 2
+    let speed1 = 2; // speed of circle 1
+    let speed2 = -2; // speed of circle 2
+    let rectY1 = 150; // initial y position of rectangle 1
+    let rectY2 = 250; // initial y position of rectangle 2
+    let rectSpeed1 = 3; // speed of rectangle 1
+    let rectSpeed2 = -3; // speed of rectangle 2
+    let squareX = 50;
+let squareY = 50;
+let squareSpeedX = 2;
+let squareSpeedY = 2;
+let rectY = 150;
+let rectSpeedY = 3;
+let circleY = 350;
+let circleSpeedY = -3;
+let size = 24; // initial size of text
+    let growth = true; // whether the text is growing or shrinking
+
+    
+
+    function setup() {
+      createCanvas(400, 400);
+    }
+
+    function draw() {
+      background(220);
+
+      // Text
+      textSize(size);
+      textAlign(CENTER, TOP);
+      fill(0); // black color
+      text("Self Portrait: Taylor Plovanich", 200, 10);
+      // Change text size
+      if (size >= 40) {
+        growth = false;
+      } else if (size <= 24) {
+        growth = true;
+      }
+
+      if (growth) {
+        size += 1;
+      } else {
+        size -= 1;
+      }
+
+      // Face
+      strokeWeight(2);
+      fill(255, 255, 255); // skin color
+      ellipse(200, 200, 200, 240);
+
+      // Neck
+      strokeWeight(2);
+      fill(255, 204, 153); // skin color
+      rect(170, 250, 60, 50, 10);
+
+      // Eyes
+      strokeWeight(1);
+      fill(0, 128, 0); // green
+      point(165, 180);
+      point(235, 180);
+      ellipse(165, 180, 40, 25);
+      ellipse(235, 180, 40, 25);
+
+      // Pupils
+      fill(0); // black
+      ellipse(165, 180, 10, 10);
+      ellipse(235, 180, 10, 10);
+
+      // Nose
+      strokeWeight(2);
+      line(200, 190, 200, 220);
+      fill(255, 204, 153); // skin color
+      triangle(200, 220, 190, 240, 210, 240);
+
+      // Mouth
+      strokeWeight(1);
+      strokeWeight(2);
+      line(170, 260, 190, 265);
+
+      // Draw circle 1
+      fill(255,255,0);
+      ellipse(x1, y1, 30, 30);
+
+      // Draw circle 2
+      fill(255,255,0);
+      ellipse(x2, y2, 30, 30);
+
+      // Draw square
+  fill(255, 0, 0);
+  rect(squareX, squareY, 50, 50);
+
+  // Move square diagonally
+  if (squareX > width - 50 || squareX < 0) {
+    squareSpeedX = -squareSpeedX;
+  }
+  if (squareY > height - 50 || squareY < 0) {
+    squareSpeedY = -squareSpeedY;
+  }
+  squareX += squareSpeedX;
+  squareY += squareSpeedY;
+      
+
+      // Move circles back and forth
+      if (x1 > width - 15 || x1 < 15) {
+        speed1 = -speed1;
+      }
+      x1 += speed1;
+
+      if (x2 > width - 15 || x2 < 15) {
+        speed2 = -speed2;
+      }
+      x2 += speed2;
+       // Draw rectangle
+  fill(0, 0, 255);
+  rect(100, rectY, 50, 50);
+
+  // Draw circle
+  fill(255, 0, 0);
+  ellipse(300, circleY, 30, 30);
+
+  // Move shapes back and forth
+  if (rectY > height - 50 || rectY < 0) {
+    rectSpeedY = -rectSpeedY;
+  }
+  rectY += rectSpeedY;
+
+  if (circleY > height - 15 || circleY < 15) {
+    circleSpeedY = -circleSpeedY;
+  }
+  circleY += circleSpeedY;
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
